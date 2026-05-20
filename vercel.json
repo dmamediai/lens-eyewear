@@ -1,7 +1,8 @@
 {
   "version": 2,
   "framework": null,
-  "buildCommand": "composer install --no-dev --optimize-autoloader --no-interaction",
+  "installCommand": "echo 'skip npm'",
+  "buildCommand": "echo 'vercel-php handles composer'",
   "outputDirectory": "public",
   "functions": {
     "api/index.php": {
@@ -16,13 +17,13 @@
     { "src": "/(.*)",        "dest": "/api/index.php" }
   ],
   "env": {
-    "APP_ENV":        "production",
-    "APP_DEBUG":      "false",
-    "LOG_LEVEL":      "error",
-    "DB_CONNECTION":  "sqlite",
-    "DB_DATABASE":    "/tmp/database.sqlite",
-    "CACHE_DRIVER":   "file",
-    "SESSION_DRIVER": "cookie",
+    "APP_ENV":          "production",
+    "APP_DEBUG":        "false",
+    "LOG_LEVEL":        "error",
+    "DB_CONNECTION":    "sqlite",
+    "DB_DATABASE":      "/tmp/database.sqlite",
+    "CACHE_DRIVER":     "file",
+    "SESSION_DRIVER":   "cookie",
     "QUEUE_CONNECTION": "sync"
   }
 }

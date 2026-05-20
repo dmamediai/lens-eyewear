@@ -2,7 +2,7 @@
   "version": 2,
   "framework": null,
   "installCommand": "echo 'skip npm'",
-  "buildCommand": "echo 'vercel-php handles composer'",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "public",
   "functions": {
     "api/index.php": {

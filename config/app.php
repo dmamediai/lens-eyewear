@@ -16,5 +16,5 @@ return [
     'providers'       => Illuminate\Support\ServiceProvider::defaultProviders()->merge([
         App\Providers\AppServiceProvider::class,
     ])->toArray(),
-    'aliases'         => Illuminate\Foundation\AliasLoader::getInstance()->getAliases(),
+    'aliases'         => Illuminate\Support\Facades\Facade::defaultAliases()->toArray(),
 ];

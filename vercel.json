@@ -19,11 +19,11 @@
   "env": {
     "APP_NAME":         "Lens Eyewear",
     "APP_ENV":          "production",
-    "APP_DEBUG":        "true",
+    "APP_DEBUG":        "false",
     "APP_KEY":          "base64:9vTNV/5yWkHTpcnRCxw781NcXHMdEuTb5dWmWEHIuGA=",
     "APP_URL":          "https://lens-rho-sable.vercel.app",
     "LOG_CHANNEL":      "stderr",
-    "LOG_LEVEL":        "debug",
+    "LOG_LEVEL":        "error",
     "DB_CONNECTION":    "sqlite",
     "DB_DATABASE":      "/tmp/database.sqlite",
     "CACHE_STORE":      "file",

@@ -5,9 +5,6 @@
  * Routes all requests through Laravel's front controller.
  */
 
-// Set the public path to /public relative to this file's parent
-define('LARAVEL_START', microtime(true));
-
 // Bootstrap the application from the project root
 $root = dirname(__DIR__);
 

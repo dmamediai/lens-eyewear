@@ -46,6 +46,17 @@ $app = require_once $root . '/bootstrap/app.php';
 $app->useStoragePath('/tmp/storage');
 $app->useBootstrapPath('/tmp/bootstrap');
 
+// ── Run migrations on cold start (SQLite in /tmp is ephemeral) ───────
+try {
+    $pdo    = new PDO('sqlite:' . $dbPath);
+    $tables = $pdo->query("SELECT name FROM sqlite_master WHERE type='table' AND name='products'")->fetchAll();
+    if (empty($tables)) {
+        $app->make(Illuminate\Contracts\Console\Kernel::class)->call('migrate', ['--force' => true]);
+    }
+} catch (\Throwable $e) {
+    // continue — app will surface its own error if needed
+}
+
 // ── Handle request ────────────────────────────────────────────────────
 $kernel   = $app->make(Illuminate\Contracts\Http\Kernel::class);
 $request  = Illuminate\Http\Request::capture();
